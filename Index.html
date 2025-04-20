@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeadWood</title>
+    <!-- External Links -->
+    <!-- CSS Stylesheet -->
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <!-- JS multi-script work fow -->
+    <script src="Data.js" defer></script>
+    <script src="Outputs.js" defer></script>
+    <script src="Utils.js" defer></script>
+    <script src="Anims.js" defer></script>
+    <script src="Actions.js" defer></script>
+    <script src="Parser.js" defer></script>
+    <script src="Main.js" defer></script>
+</head>
+
+<body onload="initGame()">
+    <!-- Container for the game -->
+    <div id='gridBox'>
+
+        <!-- Title for the level (Hidden until loaded) -->
+        <div id="title" class="hidden">
+            <p id="titleTxt"></p>
+            <p id="scoreTxt">Score: </p>
+            <p id="dog">🐶</p>
+        </div>
+
+        <!-- Output for game -->
+        <div id='output'></div>
+        <!-- User input section -->
+        <div id='cli' contenteditable="true" onkeyup="checkInput(event)"></div>
+    </div>
+</body>
+
+</html>

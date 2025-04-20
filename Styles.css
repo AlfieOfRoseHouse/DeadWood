@@ -1,0 +1,113 @@
+/* General reset */
+* {
+   margin: 0;
+}
+
+/* Root variables */
+:root {
+   --startColor: #000;
+   --endColor: #000;
+   --gridTemplate: auto 79px;
+}
+
+/* Game container */
+#gridBox {
+   display: grid;
+   width: 100%;
+   height: 100vh;
+   grid-template-rows: var(--gridTemplate);
+   background-color: black;
+   color: antiquewhite;
+   font-family: 'Courier New', Courier, monospace;
+   visibility: visible;
+}
+
+/* Title conatiner */
+#title {
+   display: none; /* Hidden by default */
+   border: inherit;
+   background-color: black;
+   font-size: 40px;
+   padding: 5px;
+}
+/* Score text within Title container */
+#scoreTxt {
+   position: absolute;
+   top: 5px;
+   right: 10px;
+   white-space: nowrap;
+   text-align: center;
+   box-sizing: content-box;
+   background-color: transparent;
+}
+/* Dog part of win animation */
+#dog {
+   position: absolute;
+   top: 5px;
+   right: 10px;
+   white-space: nowrap;
+   text-align: center;
+   box-sizing: content-box;
+   background-color: transparent;
+   visibility: hidden;
+}
+/* Title (of room) text within Title container */
+#titleTxt {
+   position: absolute;
+   top: 5px;
+   left: 10px;
+}
+
+/* Output field */
+#output {
+   overflow-y: scroll;
+   border: inherit;
+   border-bottom: 2px solid antiquewhite;
+   font-size: 20px;
+   line-height: 1.5;
+   scrollbar-width: thin;
+   scrollbar-color: antiquewhite;
+   padding: 10px;
+   white-space: pre-wrap;
+}
+
+/* Input field */
+#cli {
+   font-size: 30px;
+   border: inherit;
+   background-color: #101010;
+   padding: 10px;
+   caret-color: antiquewhite;
+   transition: transform 0.5s ease, opacity 0.5s ease;
+   transform-origin: bottom;
+   opacity: 1; /* Initially fully visible */
+}
+/* Anims */
+/* Shrinks CLI */
+.shrink {
+   animation: shrinkEffect 0.5s forwards; /* Add shrink animation */
+}
+@keyframes shrinkEffect {
+   from {
+       transform: scale(1);
+       opacity: 1;
+   }
+   to {
+       transform: scale(0);
+       opacity: 0;
+   }
+}
+
+/* Adds animation for transitioning colour in title*/
+.animate {
+   animation: transitionAnimation 1000ms ease;
+}
+@keyframes transitionAnimation {
+   fomr {
+      background-color: var(--startColor);
+   }
+
+   to {
+      background-color: var(--endColor);
+   }
+}
